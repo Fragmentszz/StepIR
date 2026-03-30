@@ -3,12 +3,12 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 
-from utils.dataset_utils import AdaIRTrainDataset
-from net.model import HOGformer as AdaIR
-from utils.schedulers import LinearWarmupCosineAnnealingLR
+from AiO_models.HOGformer.settingIII_IV.utils.dataset_utils import AdaIRTrainDataset
+from AiO_models.HOGformer.settingIII_IV.net.model import HOGformer as AdaIR
+from AiO_models.HOGformer.settingIII_IV.utils.schedulers import LinearWarmupCosineAnnealingLR
 import numpy as np
 import wandb
-from options import options as opt
+from AiO_models.HOGformer.settingIII_IV.options import options as opt
 import lightning.pytorch as pl
 from lightning.pytorch.loggers import WandbLogger,TensorBoardLogger
 from lightning.pytorch.callbacks import ModelCheckpoint

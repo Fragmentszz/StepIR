@@ -5,7 +5,7 @@ from PIL import Image
 import random
 import numpy as np
 
-from utils.image_utils import crop_img
+from AiO_models.HOGformer.settingIII_IV.utils.image_utils import crop_img
 
 
 class Degradation(object):

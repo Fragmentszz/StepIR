@@ -1,0 +1,6 @@
+checkpoint_path: /home/wanglixin/StepIR/fintune_AiO/AiO_models/HOGformer/settingIII_IV/ckpt/adair5d.ckpt
+
+
+train_opt:
+  epoch: 100
+  batch_size: 2

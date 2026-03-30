@@ -1,0 +1,11 @@
+checkpoint_path: /home/wanglixin/StepIR/fintune_AiO/AiO_models/MoCE_IR/checkpoints/MoCE-IR/MoCE_IR_AIO5/last.ckpt
+opt:
+  model: MoCE_IR
+  loss_type: FFT
+  fft_loss_weight: 0.1
+  balance_loss_weight: 0.01
+
+
+train_opt:
+  epoch: 100
+  batch_size: 4

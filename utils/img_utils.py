@@ -54,3 +54,13 @@ def data_augmentation(image, mode):
 #     for data in args:
 #         out.append(data_augmentation(data, flag_aug).copy())
 #     return out
+
+def random_crop(lq_img, hq_img, crop_size=128):
+    h, w = lq_img.shape[:2]
+    if h < crop_size or w < crop_size:
+        raise ValueError("Image size is smaller than crop size")
+    y = np.random.randint(0, h - crop_size + 1)
+    x = np.random.randint(0, w - crop_size + 1)
+    lq_crop = lq_img[y:y+crop_size, x:x+crop_size]
+    hq_crop = hq_img[y:y+crop_size, x:x+crop_size]
+    return lq_crop, hq_crop

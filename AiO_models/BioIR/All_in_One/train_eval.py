@@ -9,11 +9,11 @@ import torch.nn.functional as f
 import torch.optim as optim
 from torch.utils.data import DataLoader
 
-from utils.dataset_utils import BioIRTrainDataset
-from utils.dataset_utils import DenoiseTestDataset, DerainDehazeDataset
-from utils.val_utils import AverageMeter, compute_psnr_ssim
-from net.model import BioIR
-from utils.schedulers import LinearWarmupCosineAnnealingLR
+from AiO_models.BioIR.All_in_One.utils.dataset_utils import BioIRTrainDataset
+from AiO_models.BioIR.All_in_One.utils.dataset_utils import DenoiseTestDataset, DerainDehazeDataset
+from AiO_models.BioIR.All_in_One.utils.val_utils import AverageMeter, compute_psnr_ssim
+from AiO_models.BioIR.All_in_One.net.model import BioIR
+from AiO_models.BioIR.All_in_One.utils.schedulers import LinearWarmupCosineAnnealingLR
 import numpy as np
 # import wandb
 import lightning.pytorch as pl
@@ -38,12 +38,12 @@ class FFTLoss(nn.Module):
 
 
 class BioIRModel(pl.LightningModule):
-    def __init__(self, opt, eval_interval):
+    def __init__(self, opt=None, eval_interval=None):
         super().__init__()
         self.opt = opt
         self.net = BioIR()
         self.loss_fn  = nn.L1Loss()
-        self.eval_datasets()
+        # self.eval_datasets()
         self.eval_interval = eval_interval
         self.loss_fft = FFTLoss()
 

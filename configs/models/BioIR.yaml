@@ -1,0 +1,6 @@
+checkpoint_path: /home/wanglixin/StepIR/fintune_AiO/AiO_models/BioIR/All_in_One/ckpt/BioIR5D.ckpt
+
+
+train_opt:
+  epoch: 100
+  batch_size: 1

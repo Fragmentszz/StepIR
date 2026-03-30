@@ -1,3 +1,10 @@
 *.pth
 *.ckpt
 *checkpoints/*
+logs/*
+results/*
+wandb/*
+
+*/__pycache__
+
+restored_*.png
